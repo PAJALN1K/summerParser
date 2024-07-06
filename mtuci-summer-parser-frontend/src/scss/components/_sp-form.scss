@@ -1,0 +1,59 @@
+.sp-form {
+    background-color: $color-white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0px 8px 8px 8px lightgray;
+    position: relative;
+    bottom: 8px;
+
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+
+    color: $color-black;
+    font-family: $font-family-1;
+
+    &__header {
+        font-size: 20px;
+        line-height: 20px * 1.5;
+        font-weight: 600;
+
+        align-self: flex-start;
+        margin-bottom: 30px;
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 22px;
+    }
+
+    &__label {
+        font-size: 16px;
+        line-height: 16px * 1.5;
+        font-weight: 600;
+
+        margin-bottom: 5px;
+    }
+
+    &__input {
+        width: 360px;
+        height: 35px;
+        padding: 5px 10px;
+        border: 1px solid $color-gray;
+        border-radius: 3px;
+
+        &:focus {
+            border-color: $color-green;
+            outline: 1px solid $color-green;
+        }
+    }
+
+    &__button {
+        width: 360px;
+
+        margin-top: 5px;
+        margin-bottom: 17px;
+    }
+}

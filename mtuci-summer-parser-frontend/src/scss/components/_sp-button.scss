@@ -1,0 +1,18 @@
+.sp-button {
+    height: 35px;
+    border-radius: 3px;
+    background-color: $color-green;
+
+    padding: 5px 10px;
+
+    color: $color-white;
+    font-size: 16px;
+    line-height: 16px * 1.5;
+    font-family: $font-family-1;
+
+    transition: 0.2s;
+
+    &:hover {
+        background-color: $color-green-darker;
+    }
+}

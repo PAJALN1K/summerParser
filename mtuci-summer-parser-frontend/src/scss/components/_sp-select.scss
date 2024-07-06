@@ -1,0 +1,28 @@
+.sp-select {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-family: $font-family-1;
+
+    &__label {
+        font-size: 16px;
+        line-height: 16px * 1.5;
+        font-weight: 600;
+        color: $color-green-darker;
+    }
+
+    &__optns {
+        display: block;
+        width: 510px;
+        height: 32px;
+    }
+
+    &__option {
+        background-color: $color-white;
+        color: $color-black;
+
+        font-size: 14px;
+        line-height: 14px * 1.5;
+    }
+}

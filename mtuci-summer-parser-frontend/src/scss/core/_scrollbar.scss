@@ -1,0 +1,20 @@
+// * {
+//     scrollbar-width: 15px;;
+//     scrollbar-color: $color-gray $color-light-gray;
+// }
+
+*::-webkit-scrollbar {
+    height: 12px;
+    width: 24px;
+}
+*::-webkit-scrollbar-track {
+    background: $color-light-gray;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: $color-gray;
+    border-radius: 10px;
+    border-left: 6px solid $color-light-gray;
+    border-right: 6px solid $color-light-gray;
+    border-bottom: 5px solid $color-light-gray;
+    border-top: 5px solid $color-light-gray;
+}

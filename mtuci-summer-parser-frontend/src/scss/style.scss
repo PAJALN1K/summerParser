@@ -1,0 +1,26 @@
+// abstracts
+@import "abstracts/variables";
+
+// core
+@import "core/null-style";
+@import "core/selection";
+@import "core/scrollbar";
+
+// components
+@import "components/sp-button";
+@import "components/sp-link";
+@import "components/sp-form";
+@import "components/sp-loader";
+@import "components/sp-fieldset";
+@import "components/sp-select";
+@import "components/vacancy";
+
+// layout
+@import "layout/root";
+@import "layout/sp-page";
+
+// pages
+
+// sections
+@import "sections/vacancies.scss";
+@import "sections/vacancies-list.scss";

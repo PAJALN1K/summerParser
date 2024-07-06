@@ -1,0 +1,32 @@
+.vacancies {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__filters-sort {
+        background-color: $color-light-gray;
+        min-height: 280px;
+        width: 76%;
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        padding-top: 15px;
+    }
+
+    &__filters {
+        width: 100%;
+
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__sort {
+        align-self: center;
+    }
+}

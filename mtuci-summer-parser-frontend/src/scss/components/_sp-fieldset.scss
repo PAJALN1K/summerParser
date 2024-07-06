@@ -1,0 +1,71 @@
+.sp-fieldset {
+    font-family: $font-family-1;
+
+    &__btns {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    &__legend {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 18px * 1.5;
+        color: $color-green-darker;
+
+        margin-bottom: 5px;
+    }
+
+    &__label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+
+        font-size: 14px;
+        line-height: 14px * 1.25;
+    }
+
+    &__input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    &__label::before {
+        content: "";
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 1px solid $color-dark-gray;
+        border-radius: 50%;
+        margin-right: 0.5em;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+    }
+
+    &__input:not(:disabled):not(:checked) + &__label:hover::before {
+        border-color: $color-green;
+    }
+
+    &__input:not(:disabled):active + &__label::before {
+        background-color: $color-green;
+        border-color: $color-green;
+    }
+
+    &__input:focus:not(:checked) + &__label::before {
+        border-color: $color-green;
+    }
+
+    &__input:checked + &__label::before {
+        border-color: $color-green-darker;
+        background-color: $color-green-darker;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+    }
+
+    &__input:disabled + &__label::before {
+        background-color: $color-gray;
+    }
+}

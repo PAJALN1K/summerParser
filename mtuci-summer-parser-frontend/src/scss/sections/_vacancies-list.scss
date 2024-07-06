@@ -1,0 +1,15 @@
+.vacancies-list {
+    background-color: $color-white;
+    width: 80%;
+    flex: 1;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
