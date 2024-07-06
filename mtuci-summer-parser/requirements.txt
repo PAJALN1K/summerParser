@@ -1,6 +1,6 @@
 requests
 python-dotenv
-asyncpg
+psycopg2-binary
 flask
 flask-restx
 flask-sqlalchemy

@@ -12,7 +12,7 @@ class Settings:
     DB_PORT = os.environ.get("DB_PORT")
 
     def DATABASE_URL(self):
-        return f"postgresql+asyncpg//{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
+        return f"postgresql+psycopg2//{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
 
 
 settings = Settings()
