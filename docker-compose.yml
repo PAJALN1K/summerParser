@@ -8,14 +8,15 @@ services:
     container_name: backend
     ports:
       - "5000:5000"
-    depends_on:
-      - db
     environment:
-      - DATABASE_URL=postgresql://${DB_USER}:${DB_PASSWORD}@db:5432/${DB_NAME}
-    command: >
-      bash -c "
-      flask run --host 0.0.0.0 --port 5000
-      "
+      - DB_HOST=db
+      - DB_NAME=SummerParser
+      - DB_USER=root
+      - DB_PASSWORD=123qwe123
+      - DB_PORT=5432
+    command: ["flask", "run"]
+    networks:
+      - mynetwork
 
   frontend:
     build:
@@ -24,20 +25,27 @@ services:
     container_name: frontend
     ports:
       - "3000:3000"
-    depends_on:
-      - backend
+    command: ["npm", "start"]
+    networks:
+      - mynetwork
 
-  my_db:
+  db:
     image: postgres:13
     container_name: db
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_USER=${DB_USER}
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=123qwe123
+      - POSTGRES_DB=SummerParser
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - mynetwork
 
 volumes:
   postgres_data:
+
+networks:
+  mynetwork:
+    driver: bridge

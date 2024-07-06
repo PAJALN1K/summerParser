@@ -15,6 +15,7 @@ class VacanciesAPI(Resource):
     @cross_origin()
     @ns.marshal_list_with(vacancies_model)
     def get(self):
+        db.create_all()
         db.session.query(Vacancies).delete()
         per_page = request.args.get("per_page")
         page = request.args.get("page")

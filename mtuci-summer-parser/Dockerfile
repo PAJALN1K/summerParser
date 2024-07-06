@@ -1,19 +1,20 @@
-FROM alpine:3.17.3
+FROM python:3.10-alpine
+
+WORKDIR /app
 
 RUN apk update && \
-    apk add --update python3 && \
-    ln -sf python3 /usr/bin/python && \
-    python3 -m ensurepip && \
-    pip3 install --no-cache --upgrade pip setuptools
+    apk add --no-cache gcc musl-dev linux-headers postgresql-dev
 
-WORKDIR = /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
-RUN pip3 install -r requirements.txt
 
-ENV HOSTNAME=0.0.0.0
-ENV PORT=5000
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_PORT=5000
 
-EXPOSE $PORT
+EXPOSE 5000
 
-CMD flask run --host $HOSTNAME --port $PORT
+
+CMD ["flask", "run"]
